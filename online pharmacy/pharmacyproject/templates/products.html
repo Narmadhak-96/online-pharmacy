@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Products {% endblock title %}
+{% block body %}
+
+<div class="container mt-2">
+
+  <h2 class="display-4 text-center">PRODUCTS</h2>
+  <hr>
+  <div class="container mt-2">
+    <div class="row">
+
+        {% for i in myprod  %}
+        <div class="col row-cols-1 row-cols-md-3 g-4 py-5">
+            <div class="card" style="width: 18rem; border-radius:30px">
+                
+                <img src="{{i.prod_image.url}}" class="card-img-top border-radius:30px; padding:30px;border-radius:30px;" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">{{i.prod_name}}</h3> 
+                   <p class="text-success">Price : {{i.prod_price}} Rs</p>
+               
+                  <p class="text-danger"><b>Expiry Date : {{i.prod_exp}}</b></p>
+                  <a href="/orders" class="btn btn-success border-radious:30px bg:green;">Add To Card</a>
+                </div>
+              </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+
+
+{% endblock body %}
+
